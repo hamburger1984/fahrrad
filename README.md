@@ -12,6 +12,6 @@ sh fahrrad_plot.sh
 ```
 
 the result should look something like this
-![sample plot](stats_sample.png "sample plot")
+![sample plot](sample.png "sample plot")
 
 have fun!
