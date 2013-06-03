@@ -10,12 +10,12 @@ set xdata time
 set timefmt x '%d.%m.%Y'
 set xtics nomirror format '' tc rgb '#555555'
 
-set ytics
+set ytics nomirror
 set ylabel 'Distance [km], Speed [km/h]'
 
 set y2data time
 set timefmt y2 '%H:%M:%S'
-set y2tics format '%H:%M'
+set y2tics nomirror format '%H:%M'
 set y2label 'Time [h:m]'
 
 unset grid
