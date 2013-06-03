@@ -1,4 +1,4 @@
-#date;km/day:time/day;Vmean;Vmax;total km;total time
+#date;km/day;time/day;V_mean;V_max;total km;total time
 21.05.2013;14.79;00:48:20;18.36;35.65;14;00:48:00
 23.05.2013;16.14;00:44:57;21.55;36;30;01:33:00
 24.05.2013;17.71;00:55:00;19.33;38.4;48;02:28:00
