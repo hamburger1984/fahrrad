@@ -45,18 +45,18 @@ plot maxsum = 0, meansum = 0, \
   '' u 1:4 title 'V_{mean}' w p lw 2 ps 2 pt 10 lc rgb 'orange', \
   '' u 1:(maxsum = maxsum+$5, maxsum/($0+1)) notitle w l smooth sbezier lw 2 lt 3 lc rgb 'red', \
   '' u 1:(meansum = meansum+$4, meansum/($0+1)) notitle w l smooth sbezier lw 2 lt 3 lc rgb 'orange', \
-  '' u 1:2 title 'distance' lt 0 lw 2 ps 2 pt 6 lc rgb '#009900', \
-  '' u 1:3 title 'time' axes x1y2 lt 0 lw 2 ps 2 pt 7 lc rgb 'blue'
- 
+  '' u 1:3 title 'time' axes x1y2 lt 0 lw 2 ps 2 pt 7 lc rgb 'blue', \
+  '' u 1:2 title 'distance' lt 0 lw 2 ps 2 pt 6 lc rgb '#009900'
+
 set title 'Totals'
 # unset key
 set ylabel 'Distance [km]'
 set xtics nomirror format '%d. %b %Y' rotate by -45 autofreq tc rgb '#555555'
 set xrange restore
 
-plot 'stats.csv' u 1:6 notitle w filledcu y1=0 lc rgb '#009900', \
-  '' u 1:6 title 'distance' lt 1 lw 2 ps 2 pt 6 lc rgb '#009900', \
-  '' u 1:7 notitle axes x1y2 w filledcu y1=0 lc rgb 'blue', \
-  '' u 1:7 title 'time' axes x1y2 lt 1 lw 2 ps 2 pt 7 lc rgb 'blue'
+plot 'stats.csv' u 1:7 notitle axes x1y2 w filledcu y1=0 lc rgb 'blue', \
+  '' u 1:7 title 'time' axes x1y2 lt 1 lw 2 ps 2 pt 7 lc rgb 'blue', \
+  '' u 1:6 notitle w filledcu y1=0 lc rgb '#009900', \
+  '' u 1:6 title 'distance' lt 1 lw 2 ps 2 pt 6 lc rgb '#009900'
 
 unset multiplot
