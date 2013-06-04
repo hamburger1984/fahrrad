@@ -32,8 +32,7 @@ set autoscale
 set yrange [0:]
 set y2range [0:]
 set xrange ['21.5.2013':] writeback
-set boxwidth 20000 
-set style fill transparent solid 0.5 noborder
+set style fill transparent solid 0.3 noborder
 set style data linespoints
 
 set title 'Daily'
@@ -43,8 +42,11 @@ set title 'Daily'
 plot maxsum = 0, meansum = 0, \
   'stats.csv' u 1:5 title 'V_{max}' w p lw 2 ps 2 pt 8 lc rgb 'red', \
   '' u 1:4 title 'V_{mean}' w p lw 2 ps 2 pt 10 lc rgb 'orange', \
-  '' u 1:(maxsum = maxsum+$5, maxsum/($0+1)) notitle w l smooth sbezier lw 2 lt 3 lc rgb 'red', \
-  '' u 1:(meansum = meansum+$4, meansum/($0+1)) notitle w l smooth sbezier lw 2 lt 3 lc rgb 'orange', \
+  '' u 1:5:(maxsum = maxsum+$5, maxsum/($0+1)) notitle w filledcu lc rgb 'red', \
+  '' u 1:4:(meansum = meansum+$4, meansum/($0+1)) notitle w filledcu lc rgb 'orange', \
+  maxsum = 0, meansum = 0, \
+  '' u 1:(maxsum = maxsum+$5, maxsum/($0+1)) notitle w l lw 2 lt 3 lc rgb 'red', \
+  '' u 1:(meansum = meansum+$4, meansum/($0+1)) notitle w l lw 2 lt 3 lc rgb 'orange', \
   '' u 1:3 title 'time' axes x1y2 lt 0 lw 2 ps 2 pt 7 lc rgb 'blue', \
   '' u 1:2 title 'distance' lt 0 lw 2 ps 2 pt 6 lc rgb '#009900'
 
