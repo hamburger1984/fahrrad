@@ -1,4 +1,4 @@
-set term pngcairo dashed truecolor enhanced size 1000,800 font "arial,9"
+set term pngcairo dashed truecolor enhanced size 1280,800 font "arial,9"
 set output 'stats.png'
 
 set multiplot layout 2,1
