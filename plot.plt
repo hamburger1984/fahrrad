@@ -1,4 +1,4 @@
-set term pngcairo dashed truecolor enhanced size 1280,1600 font "arial,9"
+set term pngcairo dashed truecolor enhanced size 1440,1600 font "arial,9"
 set output 'stats.png'
 
 set multiplot layout 3,1
@@ -39,7 +39,7 @@ set title 'Speed'
 
 plot maxsum = 0, meansum = 0, \
   'stats.csv' u 1:5 title 'V_{max}' w p lw 2 ps 2 pt 8 lc rgb 'red', \
-  '' u 1:4 title 'V_{mean}' w p lw 2 ps 2 pt 10 lc rgb 'orange', \
+  '' u 1:4 title '  V_{mean}' w p lw 2 ps 2 pt 10 lc rgb 'orange', \
   '' u 1:5:(maxsum = maxsum+$5, maxsum/($0+1)) notitle w filledcu lc rgb 'red', \
   '' u 1:4:(meansum = meansum+$4, meansum/($0+1)) notitle w filledcu lc rgb 'orange', \
   maxsum = 0, meansum = 0, \
