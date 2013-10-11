@@ -50,6 +50,7 @@ plot maxsum = 0, meansum = 0, \
 set title 'Daily'
 set ylabel 'Distance [km]'
 set y2label 'Time [h:m]'
+set xtics nomirror format '%d. %b %Y' rotate by -45 autofreq tc rgb '#555555'
 set xrange restore
 #  'stats.csv' u 1:5:4 notitle w filledcu lc rgb 'light-goldenrod', \
 
@@ -59,8 +60,10 @@ plot 'stats.csv' u 1:3 title 'time' axes x1y2 lt 0 lw 2 ps 2 pt 7 lc rgb 'blue',
 set title 'Total'
 # unset key
 set ylabel 'Distance [km]'
-set xtics nomirror format '%d. %b %Y' rotate by -45 autofreq tc rgb '#555555'
-set xrange restore
+unset y2label;
+unset y2tics;
+set xtics nomirror format '%d. %b %Y' rotate by 0 offset -3 autofreq tc rgb '#555555'
+#set xrange restore
 
 plot 'stats.csv' u 1:6 notitle w filledcu y1=0 lc rgb '#009900', \
   '' u 1:6 title 'distance' lt 1 lw 2 ps 2 pt 6 lc rgb '#009900'
