@@ -1,5 +1,5 @@
 SOURCES=plotting.r stats.csv
-PLOTS=stats_1.png stats_2.png stats_3.png stats_4.png stats_5.png stats_6.png
+PLOTS=stats_1.png stats_2.png stats_3.png stats_4.png stats_5.png stats_6.png stats_7.png stats_8.png
 
 all: $(PLOTS)
 

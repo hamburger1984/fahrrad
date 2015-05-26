@@ -25,18 +25,12 @@ library(ggplot2)
 
 png("stats_%d.png", width=2200, height=1000, res=120)
 
+# ..distance related
 ggplot(df, aes(x=date, y=total.km, group=bike, color=bike, fill=bike)) +
       geom_point() +
       geom_line(alpha=.35) +
       ggtitle("Total distance") +
       labs(x="Date", y="Total distance\n(km)") +
-      facet_wrap(bike~year, scales="free")
-
-ggplot(df, aes(x=date, y=total.time.hours, group=bike, color=bike, fill=bike)) +
-      geom_point() +
-      geom_line(alpha=.35) +
-      ggtitle("Total time") +
-      labs(x="Date", y="Total time\n(hours)") +
       facet_wrap(bike~year, scales="free")
 
 ggplot(df, aes(x=date, y=km.day, group=bike, color=bike, fill=bike)) +
@@ -46,6 +40,20 @@ ggplot(df, aes(x=date, y=km.day, group=bike, color=bike, fill=bike)) +
       labs(x="Date", y="Distance\n(km)") +
       facet_wrap(bike~year, scales="free_x")
 
+ggplot(df, aes(day, km.day, fill=bike, color=bike)) +
+      geom_violin(adjust=.75, alpha=.35) +
+      ggtitle("Daily distance by day of week") +
+      labs(x="Day of week", y="Distance\n(km)") +
+      facet_wrap(bike~year)
+
+# ..time related
+ggplot(df, aes(x=date, y=total.time.hours, group=bike, color=bike, fill=bike)) +
+      geom_point() +
+      geom_line(alpha=.35) +
+      ggtitle("Total time") +
+      labs(x="Date", y="Total time\n(hours)") +
+      facet_wrap(bike~year, scales="free")
+
 ggplot(df, aes(x=date, y=time.day.hours, group=bike, color=bike, fill=bike)) +
       geom_point() +
       geom_area(alpha=.35) +
@@ -53,14 +61,21 @@ ggplot(df, aes(x=date, y=time.day.hours, group=bike, color=bike, fill=bike)) +
       labs(x="Date", y="Time\n(hours)") +
       facet_wrap(bike~year, scales="free_x")
 
-ggplot(df, aes(day, km.day, fill=bike)) +
-      geom_violin(adjust=.75) +
-      ggtitle("Daily distance by day of week") +
-      labs(x="Day of week", y="Distance\n(km)") +
-      facet_wrap(bike~year)
-
-ggplot(df, aes(day, time.day.hours, fill=bike)) +
-      geom_violin(adjust=.75) +
+ggplot(df, aes(day, time.day.hours, fill=bike, color=bike)) +
+      geom_violin(adjust=.75, alpha=.35) +
       ggtitle("Daily time by day of week") +
       labs(x="Day of week", y="Time\n(hours)") +
+      facet_wrap(bike~year)
+
+# ..speed related
+ggplot(df, aes(day, V_max, fill=bike, color=bike)) +
+      geom_violin(adjust=.75, alpha=.35) +
+      ggtitle("Max. speed by day of week") +
+      labs(x="Day of week", y="Speed\n(km/h)") +
+      facet_wrap(bike~year)
+
+ggplot(df, aes(day, V_mean, fill=bike, color=bike)) +
+      geom_violin(adjust=.75, alpha=.35) +
+      ggtitle("Mean speed by day of week") +
+      labs(x="Day of week", y="Speed\n(km/h)") +
       facet_wrap(bike~year)
