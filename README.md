@@ -4,7 +4,7 @@ Bicycle stats, collected in a csv-file, plotted with
 [R](http://www.r-project.org/) using [ggplot2](http://ggplot2.org/).
 
 * statistics should be entered into 'stats.csv' (one line per day)
-* separator is ';'
+* separator is ','
 * date format dd.MM.yyyy
 * time format HH:mm:ss
 

@@ -1,7 +1,7 @@
 # --- reading, converting
 library(lubridate)
 
-df <- read.csv("stats.csv", sep=";", dec=".", comment.char="#")
+df <- read.csv("stats.csv", sep=",", dec=".", comment.char="#")
 
 df$date <- as.Date(df$date, "%d.%m.%Y")
 df$day <- wday(df$date, label=TRUE)
