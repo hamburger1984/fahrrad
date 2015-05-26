@@ -1,17 +1,14 @@
 # fahrrad
-bicycle stats, collected in a csv-file, plotted with gnuplot
+
+Bicycle stats, collected in a csv-file, plotted with
+[R](http://www.r-project.org/) using [ggplot2](http://ggplot2.org/).
 
 * statistics should be entered into 'stats.csv' (one line per day)
 * separator is ';'
 * date format dd.MM.yyyy
 * time format HH:mm:ss
 
-to plot your own statistics, run
-```bash
-sh fahrrad_plot.sh
-```
+To plot your own statistics, just run `make`. Several plots will be created. My
+(semi-current) plots are included here.
 
-the result should look something like this
-![sample plot](sample.png "sample plot")
-
-have fun!
+Have fun!
