@@ -11,4 +11,7 @@ Bicycle stats, collected in a csv-file, plotted with
 To plot your own statistics, just run `make`. Several plots will be created. My
 (semi-current) plots are included here.
 
+sample:
+![sample plot, total distance](stats_1.png)
+
 Have fun!
