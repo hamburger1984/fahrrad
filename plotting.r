@@ -34,8 +34,8 @@ ggplot(df, aes(x=date, y=total.km, group=bike, color=bike, fill=bike)) +
       facet_wrap(bike~year, scales="free")
 
 ggplot(df, aes(x=date, y=km.day, group=bike, color=bike, fill=bike)) +
-      geom_point() +
-      geom_area(alpha=.35) +
+      geom_bar(stat="identity") +
+      #geom_area(alpha=.35) +
       ggtitle("Daily distance") +
       labs(x="Date", y="Distance\n(km)") +
       facet_wrap(bike~year, scales="free_x")
@@ -55,8 +55,8 @@ ggplot(df, aes(x=date, y=total.time.hours, group=bike, color=bike, fill=bike)) +
       facet_wrap(bike~year, scales="free")
 
 ggplot(df, aes(x=date, y=time.day.hours, group=bike, color=bike, fill=bike)) +
-      geom_point() +
-      geom_area(alpha=.35) +
+      geom_bar(stat="identity") +
+      #geom_area(alpha=.35) +
       ggtitle("Daily time") +
       labs(x="Date", y="Time\n(hours)") +
       facet_wrap(bike~year, scales="free_x")
