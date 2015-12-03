@@ -19,6 +19,7 @@ df$total.time.hours <- period_to_seconds(df$total.time)/3600
 #lapply(df, class)
 #str(df)
 #which(is.na(df$V_max))
+#df[rowSums(is.na(df)) > 0,]
 
 # --- plotting
 library(ggplot2)
