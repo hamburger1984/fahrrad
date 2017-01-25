@@ -1,3 +1,10 @@
+if(!require(lubridate)){
+    install.packages("lubridate")
+}
+if(!require(ggplot2)){
+    install.packages("ggplot2")
+}
+
 # --- reading, converting
 library(lubridate)
 

@@ -5,8 +5,6 @@ all: $(PLOTS)
 
 $(PLOTS): plotting.r stats.csv
 	R --slave -f plotting.r
-#	R --vanilla --slave -f plotting.r
-#	R --vanilla -f plotting.r
 
 clean:
 	rm $(PLOTS)
